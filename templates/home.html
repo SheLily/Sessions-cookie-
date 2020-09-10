@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Угадай число{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1>Игра "Угадай число"</h1>
+            <a href="{% url 'index' %}?q=create">Создать игру</a>
+            <br>
+            <a href="{% url 'index' %}?q=play&game=1">Играть</a>
+
+            {{game.solved}}
+            {% if game.solved %}
+                {{ game }}
+                Ваше число угадали с {{ game.playergameinfo_set.attempts }} попыток.
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}

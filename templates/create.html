@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Угадай число{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1>Игра "Угадай число"</h1>
+            
+            <a href="{% url 'index' %}">Гланая</a>
+
+            <form action="" method="POST">{% csrf_token %}
+                {{ create_form }}
+                <button>Создать игру</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
